@@ -33,7 +33,7 @@ public class CityController {
     model.addAttribute("level", level);
     model.addAttribute("email", email);
     cityService.requestReservation(cityName, level, email);
-    return "request_reservaiton";
+    return "request_reservation";
   }
 
 }

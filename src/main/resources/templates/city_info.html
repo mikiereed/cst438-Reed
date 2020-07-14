@@ -39,19 +39,20 @@
   				<td th:inline="text">[[${cityInfo.time}]]</td>
   			</tr>
   		</table>
+  		<br />
   		
   		<p th:inline="text">For a fabulous weekend get away for 2 to [[${cityInfo.name}]] sign up here.</p>
   		
   		<form action="#" th:action="@{/cities/reservation}" method="post">
-  			Email: <input type="text" name="email" />
+  			Email: <input type="text" name="email" /><br>
   			
   			<input type="radio" id="luxury" name="level" value="luxury">
-  			<label for="luxury">Luxury</label><br>
+  			<label for="luxury">Luxury $1000</label><br>
   			<input type="radio" id="moderate" name="level" value="moderate">
-  			<label for="moderate">Moderate</label><br>
+  			<label for="moderate">Moderate $500</label><br>
   			<input type="radio" id="budget" name="level" value="budget">
-  			<label for="budget">Budget</label>
-  			<input type="hidden" name="city" value=[[${cityInfo.name}]]>
+  			<label for="budget">Budget $350</label><br>
+  			<input type="hidden" th:value="${cityInfo.name}" name="city" />
   			
   			<input type="submit" value="Submit" />
   		</form>
