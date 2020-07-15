@@ -1,10 +1,13 @@
 package cst438hw3.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "country")
-public class Country {
+public class Country implements Serializable {
 
   @Id
   private String code;
